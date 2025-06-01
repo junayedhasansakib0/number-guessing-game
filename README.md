@@ -34,7 +34,7 @@ This is a simple command-line **Number Guessing Game** implemented in Python. Th
    ```
 4. Run the game:
    ```bash
-   python number_guessing_game.py
+   python main.py
    ```
 
 ## Requirements
