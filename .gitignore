@@ -1,0 +1,5 @@
+.venv
+./build
+number_guessing_game.py
+./dist
+number_guessing_game.spec
