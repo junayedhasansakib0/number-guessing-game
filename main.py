@@ -1,6 +1,16 @@
 import random
+import tkinter as tk
+from tkinter import simpledialog,messagebox
 
 print("\n ----Number Guessing Game----")
+
+# Create the GUI application window
+root = tk.Tk()
+root.withdraw()  # Hide the main window
+
+# Welcome Message
+messagebox.showinfo("Number Guessing Game", "Welcome to the Number Guessing Game!")
+
 
 # Generate a random number between 1 and 20 (inclusive)
 secret_number = random.randint(1, 20)
@@ -17,13 +27,11 @@ def play_game():
             chance_limit = int(input("How many times do you want to guess the number?: "))
             if chance_limit <= 0:
                 print("Please enter a positive number of chances. Try again.")
+                messagebox.showerror("Please enter a positive number of chances. Try again.")
         except ValueError:
             print("Invalid input. Please enter an integer for the number of chances. Try again.")
-            # If ValueError occurs, chance_limit remains 0 or whatever it was,
-            # so the loop continues.
+            messagebox.showerror("Invalid input. Please enter an integer for the number of chances. Try again.")
 
-    # We use a 'current_chance' counter instead of 'i' from range
-    # to allow replaying a chance if a duplicate guess is made.
     current_chance = 0
 
     while current_chance < chance_limit:
